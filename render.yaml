@@ -3,6 +3,10 @@ services:
     name: flask-poetry
     env: python
     plan: starter
-    buildCommand: poetry install
+    branch: robdimarco/with-build-script
+    buildCommand: ./build.sh
     startCommand: gunicorn app:app --chdir ./poetry_flask
     autoDeploy: false
+    envVars:
+    - key: PYTHON_VERSION
+      value: 3.11.8
