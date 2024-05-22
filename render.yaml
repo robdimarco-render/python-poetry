@@ -5,7 +5,7 @@ services:
     plan: starter
     branch: robdimarco/with-build-script
     buildCommand: ./build.sh
-    startCommand: gunicorn app:app --chdir ./poetry_flask
+    startCommand: ./run.sh
     autoDeploy: false
     envVars:
     - key: PYTHON_VERSION
