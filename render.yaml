@@ -6,3 +6,8 @@ services:
     buildCommand: poetry install
     startCommand: gunicorn app:app --chdir ./poetry_flask
     autoDeploy: false
+    image:
+      url: robdimarcorender/mysql-example
+      creds: 
+        fromRegistryCreds:
+          name: docker
