@@ -1,8 +1,11 @@
 services:
   - type: web
     name: flask-poetry
-    env: python
+    runtime: image
     plan: starter
-    buildCommand: poetry install
-    startCommand: gunicorn app:app --chdir ./poetry_flask
     autoDeploy: false
+    image:
+      url: robdimarcorender/mysql-example
+      creds: 
+        fromRegistryCreds:
+          name: docker
